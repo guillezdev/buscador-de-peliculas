@@ -14,7 +14,6 @@ export const filmsSlice = createSlice({
       state.isLoading = false;
       state.films = action.payload.Search;
     },
-
   },
 });
 

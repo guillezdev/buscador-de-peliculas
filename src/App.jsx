@@ -1,6 +1,6 @@
 import "./App.css";
 import { Films } from "./components/Films";
-import { useDispatch } from "react-redux";
+import { useDispatch} from "react-redux";
 import { getFilms } from "./store/slices/films/thunks";
 import { useEffect, useState } from "react";
 
@@ -29,7 +29,6 @@ function App() {
             onClick={(e) => {
               e.preventDefault();
               dispatch(getFilms(selectFilms));
-              console.log(selectFilms);
             }}
           >
             Buscar

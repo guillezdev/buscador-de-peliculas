@@ -8,11 +8,16 @@ export function Films() {
   return (
     <main className="films">
       {isLoading && <h2>Cargando Peliculas...</h2>}
-      {films.length > 0 &&
-        films.map((films) => {
-          <div>
-            <h2>{films.Title}</h2>
-          </div>;
+      {!isLoading &&
+        films.length > 1 &&
+        films.map((el) => {
+          return (
+            <div className="film" key={el.imdbID}>
+              <h3>{el.Title}</h3>
+              <p>Año:{el.Year}</p>
+              <img src={el.Poster} alt={el.Poster} />
+            </div>
+          );
         })}
     </main>
   );
