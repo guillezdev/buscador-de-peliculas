@@ -1,12 +1,16 @@
 import "./App.css";
-import { useSelector, useDispatch } from "react-redux";
-import { getFilms } from "./store/slices/thunks.js";
-import { useEffect } from "react";
+import { Films } from "./components/Films";
+import { useDispatch } from "react-redux";
+import { getFilms } from "./store/slices/films/thunks";
+import { useEffect, useState } from "react";
 
 function App() {
-  const { films, isLoading } = useSelector((state) => state.films);
+  const [selectFilms, setSelectFilms] = useState("");
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    getFilms();
+    dispatch(getFilms());
   }, []);
 
   return (
@@ -17,20 +21,23 @@ function App() {
           <input
             type="text"
             placeholder="Avengers , The Matrix , Start Wars  . . ."
+            onChange={(e) => setSelectFilms(e.target.value)}
+            value={selectFilms}
           />
           <button
             type="submit"
             onClick={(e) => {
               e.preventDefault();
-              console.log(films, isLoading);
+              dispatch(getFilms(selectFilms));
+              console.log(selectFilms);
             }}
           >
             Buscar
           </button>
         </form>
-        <hr />
-        <main className="films">Aqui van las pelicula...</main>
       </header>
+      <hr />
+      <Films />
     </div>
   );
 }

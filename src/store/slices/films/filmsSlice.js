@@ -10,9 +10,11 @@ export const filmsSlice = createSlice({
     startLoadingFilms : (state) => { 
         state.isLoading = true;
     },
-    setFilms: (state, actions) => {
-      state.value = actions.payload;
+    setFilms: (state, action) => {
+      state.isLoading = false;
+      state.films = action.payload.Search;
     },
+
   },
 });
 
