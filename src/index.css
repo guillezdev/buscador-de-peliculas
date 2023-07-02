@@ -30,3 +30,12 @@ img {
 h2 {
   text-align: center;
 }
+.footer{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  background-color: #19212c;
+  border-radius: 1rem;
+  margin: 1rem;
+}

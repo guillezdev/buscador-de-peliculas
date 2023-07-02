@@ -3,6 +3,7 @@ import { Films } from "./components/Films";
 import { useDispatch } from "react-redux";
 import { getFilms } from "./store/slices/films/thunks";
 import { useEffect, useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const [selectFilms, setSelectFilms] = useState("");
@@ -42,6 +43,7 @@ function App() {
       </header>
       <hr />
       <Films />
+      <Footer />
     </div>
   );
 }
