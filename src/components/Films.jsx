@@ -19,7 +19,7 @@ export function Films() {
             </div>
           );
         })}
-      {films?.Title == undefined && !isLoading && (
+      {films?.Title == undefined && !isLoading && !films?.length > 0 && (
         <h2>No hay resultados para su busqueda.</h2>
       )}
     </main>
