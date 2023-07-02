@@ -35,7 +35,8 @@ h2 {
   right: 0;
   bottom: 0;
   padding: 1rem;
-  background-color: #19212c;
+  background-color: #19212cbd;
   border-radius: 1rem;
   margin: 1rem;
+  backdrop-filter: blur(2px);
 }
