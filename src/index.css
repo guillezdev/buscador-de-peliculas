@@ -24,3 +24,6 @@ form {
   display: flex;
   flex-direction: column;
 }
+img {
+  border-radius: 1rem;
+}

@@ -10,7 +10,7 @@ export function Films() {
       {isLoading && <h2>Cargando Peliculas...</h2>}
       {!isLoading &&
         films.length > 0 &&
-        films?.map((el) => {
+        films.map((el) => {
           return (
             <div className="film" key={el.imdbID}>
               <h3>{el.Title}</h3>

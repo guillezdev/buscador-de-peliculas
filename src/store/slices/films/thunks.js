@@ -4,7 +4,6 @@ const API_KEY = "e25a73ff";
 const url = `http://www.omdbapi.com/?apikey=e25a73ff&s=`;
 
 export function getFilms(film = "avengers") {
-    
   return (dispatch, getState) => {
     dispatch(startLoadingFilms());
 
@@ -13,6 +12,7 @@ export function getFilms(film = "avengers") {
       .then((res) => res.json())
       .then((json) => {
         dispatch(setFilms(json));
-      });
+      })
+      .catch((err) => console.error("Error en el fetch"+err));
   };
 }
