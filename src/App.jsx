@@ -22,7 +22,10 @@ function App() {
     <div className="container">
       <header className="header">
         <h1>Buscador de peliculas</h1>
-        <form action="">
+        <form onSubmit={(e) => {
+              e.preventDefault();
+              dispatch(getFilms(selectFilms));
+            }}>
           <input
             type="text"
             placeholder="Avengers , The Matrix , Start Wars  . . ."
@@ -32,10 +35,6 @@ function App() {
           />
           <button
             type="submit"
-            onClick={(e) => {
-              e.preventDefault();
-              dispatch(getFilms(selectFilms));
-            }}
           >
             Buscar
           </button>
