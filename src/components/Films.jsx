@@ -9,7 +9,7 @@ export function Films() {
     <main className="films">
       {isLoading && <h2>Cargando Peliculas...</h2>}
       {!isLoading &&
-        films.length > 0 &&
+        films?.length > 0 &&
         films.map((el) => {
           return (
             <div className="film" key={el.imdbID}>
@@ -19,6 +19,9 @@ export function Films() {
             </div>
           );
         })}
+      {films?.Title == undefined && !isLoading && (
+        <h2>No hay resultados para su busqueda.</h2>
+      )}
     </main>
   );
 }

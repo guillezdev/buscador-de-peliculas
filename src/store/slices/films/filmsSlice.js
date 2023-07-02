@@ -7,8 +7,8 @@ export const filmsSlice = createSlice({
     films: [],
   },
   reducers: {
-    startLoadingFilms : (state) => { 
-        state.isLoading = true;
+    startLoadingFilms: (state) => {
+      state.isLoading = true;
     },
     setFilms: (state, action) => {
       state.isLoading = false;
@@ -17,5 +17,5 @@ export const filmsSlice = createSlice({
   },
 });
 
-export const { startLoadingFilms , setFilms } = filmsSlice.actions;
+export const { startLoadingFilms, setFilms } = filmsSlice.actions;
 export default filmsSlice.reducer;

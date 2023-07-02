@@ -13,6 +13,6 @@ export function getFilms(film = "avengers") {
       .then((json) => {
         dispatch(setFilms(json));
       })
-      .catch((err) => console.error("Error en el fetch"+err));
+      .catch((err) => console.error("Error en el fetch" + err));
   };
 }

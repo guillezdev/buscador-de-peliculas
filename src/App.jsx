@@ -1,6 +1,6 @@
 import "./App.css";
 import { Films } from "./components/Films";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { getFilms } from "./store/slices/films/thunks";
 import { useEffect, useState } from "react";
 
@@ -13,6 +13,10 @@ function App() {
     dispatch(getFilms());
   }, []);
 
+  const handleChange = (event) => {
+    setSelectFilms(event.target.value);
+  };
+
   return (
     <div className="container">
       <header className="header">
@@ -21,7 +25,8 @@ function App() {
           <input
             type="text"
             placeholder="Avengers , The Matrix , Start Wars  . . ."
-            onChange={(e) => setSelectFilms(e.target.value)}
+            onChange={handleChange}
+            required
             value={selectFilms}
           />
           <button
