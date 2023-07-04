@@ -7,7 +7,6 @@ import Footer from "./components/Footer";
 
 function App() {
   const [selectFilms, setSelectFilms] = useState("");
-
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -20,7 +20,7 @@ export function Films() {
           );
         })}
       {films?.Title == undefined && !isLoading && !films?.length > 0 && (
-        <h2>No hay resultados para su busqueda.</h2>
+        <h2>No hay resultados.</h2>
       )}
     </main>
   );
