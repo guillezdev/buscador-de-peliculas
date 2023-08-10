@@ -3,7 +3,7 @@ import { startLoadingFilms, setFilms } from "./filmsSlice";
 const API_KEY = "e25a73ff";
 const url = `https://www.omdbapi.com/?apikey=e25a73ff&s=`;
 
-export function getFilms(film = "avengers" ,page = 1) {
+export function getFilms(film = "harry potter" ,page = 1) {
   return (dispatch, getState) => {
     dispatch(startLoadingFilms());
 
