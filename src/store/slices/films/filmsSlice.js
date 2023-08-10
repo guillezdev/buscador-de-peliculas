@@ -5,6 +5,7 @@ export const filmsSlice = createSlice({
   initialState: {
     isLoading: false,
     films: [],
+    page: 1
   },
   reducers: {
     startLoadingFilms: (state) => {
@@ -14,8 +15,12 @@ export const filmsSlice = createSlice({
       state.isLoading = false;
       state.films = action.payload.Search;
     },
+    setPage:(state) => { 
+      state.page += 1
+      console.log(state.page);
+     }
   },
 });
 
-export const { startLoadingFilms, setFilms } = filmsSlice.actions;
+export const { startLoadingFilms, setFilms ,setPage } = filmsSlice.actions;
 export default filmsSlice.reducer;
