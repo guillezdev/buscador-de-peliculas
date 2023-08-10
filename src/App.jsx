@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getFilms } from "./store/slices/films/thunks";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
-import { setPage } from "./store/slices/films/filmsSlice";
+import { setPage, setResetPage } from "./store/slices/films/filmsSlice";
 
 function App() {
   const [selectFilms, setSelectFilms] = useState("");
@@ -40,11 +40,18 @@ function App() {
             Buscar
           </button>
         </form>
-        <button onClick={(e) => {
-          e.preventDefault();
-          dispatch(setPage());
-          dispatch(getFilms(selectFilms, page))
-        }} >Next page</button>
+        <div>
+          <button onClick={(e) => {
+            e.preventDefault();
+            dispatch(setPage());
+            dispatch(getFilms(selectFilms, page))
+          }} >Next page</button>
+          <button onClick={(e) => {
+            e.preventDefault();
+            dispatch(setResetPage());
+            dispatch(getFilms(selectFilms, 1))
+          }} >reset page</button>
+        </div>
       </header>
       <hr />
       <Films />

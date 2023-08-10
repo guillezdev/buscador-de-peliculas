@@ -15,12 +15,21 @@ export const filmsSlice = createSlice({
       state.isLoading = false;
       state.films = action.payload.Search;
     },
-    setPage:(state) => { 
+    setPage: (state, action) => {
       state.page += 1
       console.log(state.page);
-     }
+    },
+    setResetPage: (state) => {
+      if (state.page > 1) {
+        state.page -= 1
+      } else {
+        state.page = 1
+      }
+
+
+    }
   },
 });
 
-export const { startLoadingFilms, setFilms ,setPage } = filmsSlice.actions;
+export const { startLoadingFilms, setFilms, setPage, setResetPage } = filmsSlice.actions;
 export default filmsSlice.reducer;
