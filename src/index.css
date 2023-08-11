@@ -40,3 +40,8 @@ h2 {
   margin: 1rem;
   backdrop-filter: blur(2px);
 }
+.filter-container{
+  display: flex;
+  gap: 4;
+  justify-content: center;
+}
