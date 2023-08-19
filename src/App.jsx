@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <h1>Buscador de peliculas</h1>
+        <h1>Search-Muvies</h1>
         <form onSubmit={(e) => {
           e.preventDefault();
           dispatch(getFilms(selectFilms, page, typeFilm));
@@ -38,7 +38,7 @@ function App() {
           <button
             type="submit"
           >
-            Buscar
+            Search
           </button>
         </form>
         <div>
