@@ -54,7 +54,6 @@ function App() {
           }} >reset page</button>
         </div>
         <div className="filter-container">
-          <p>Filtrar por:</p>
           <button onClick={() => dispatch(setType('movie'))}>Movies</button>
           <button onClick={() => dispatch(setType('series'))}>Series</button>
           <button onClick={() => dispatch(setType('episode'))}>Episode</button>
