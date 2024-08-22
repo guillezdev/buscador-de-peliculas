@@ -16,7 +16,7 @@ export const filmsSlice = createSlice({
       state.isLoading = false;
       state.films = action.payload.Search;
     },
-    setPage: (state, action) => {
+    setPage: (state) => {
       state.page += 1
       console.log(state.page);
     },

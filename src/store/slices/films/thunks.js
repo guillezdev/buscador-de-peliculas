@@ -1,10 +1,9 @@
 import { startLoadingFilms, setFilms } from "./filmsSlice";
 
-const API_KEY = "e25a73ff";
 const url = `https://www.omdbapi.com/?apikey=e25a73ff`;
 
 export function getFilms(film = "harry potter" ,page = 1 ,type = '') {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     dispatch(startLoadingFilms());
 
     //TODO: Realizar peticion http
